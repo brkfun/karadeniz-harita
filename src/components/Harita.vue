@@ -12,8 +12,7 @@
         :opened="openedIndex"
         @closeclick="openedIndex = null"
     >
-      <div>
-        {{ data }}
+      <div v-html="data">
       </div>
     </GmapInfoWindow>
 
@@ -2738,7 +2737,22 @@ export default {
             }
           ],
       blackSeaData: {
-
+        "55" : "<h2>Samsun</h2><div>216</div>",
+        "67" : "Zonguldak",
+        "52" : "Ordu",
+        "53" : "Rize",
+        "61" : "Trabzon",
+        "28" : "Giresun",
+        "29" : "Gümüşhane",
+        "60" : "Tokat",
+        "57" : "Sinop",
+        "81" : "Düzce",
+        "14" : "Bolu",
+        "78" : "Karabük",
+        "74" : "Bartın",
+        "37" : "Kastamonu",
+        "69" : "Bayburt",
+        "08" : "Artvin",
       }
     }
   },
@@ -2747,7 +2761,7 @@ export default {
       this.position = {lat : event.latLng.lat(), lng: event.latLng.lng()}
       this.openedIndex = true;
       console.log(index);
-      //this.data = this.blackSeaData[index]
+      this.data = this.blackSeaData[index]
     }
   }
 
